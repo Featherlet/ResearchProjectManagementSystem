@@ -1,0 +1,47 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="StuMasterPage.master.cs" Inherits="MasterPage" %>
+<%@ Register Src="~/userControl/menu.ascx" TagName="menu" TagPrefix="uc1" %>
+<%@ Register Src="~/userControl/s_navigate.ascx" TagName="s_navigate" TagPrefix="uc3" %>
+<%@ Register Src="~/userControl/bottom.ascx" TagName="bottom" TagPrefix="uc4" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>母版页</title>
+    <style>
+    body:{margin-top:0px}
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <table style="width :100%; height :100%;　font-size: 9pt; font-family: 宋体;  background-image: url(images/大背景.jpg); background-repeat:no-repeat"  align =center border="0" cellpadding="0" cellspacing="0">
+    <tr>
+    <td valign =top >
+   <table style="width :100%; height :100%;　font-size: 9pt; font-family: 宋体; "  align =center border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td colspan="2" valign =top  align="center" style ="width :100%; height :104px;background-image: url(images/banner.jpg); background-repeat:no-repeat " >
+                    <uc1:menu ID="Menu1" runat="server" />
+                 </td> 
+            </tr>
+            <tr>
+            <td align =left style="width: 20%; vertical-align :top " >
+                    <uc3:s_navigate id="Navigate1" runat="server">
+                    </uc3:s_navigate>
+                </td>
+            <td style="width: 80%; vertical-align :top" >
+                <asp:contentplaceholder id="ContentPlaceHolder1" runat="server">
+                </asp:contentplaceholder>
+            </td>
+            </tr>
+            <tr>
+                <td colspan="2"  valign =top  style ="width :100%; height :116px;background-image: url(images/底部.jpg); background-repeat:no-repeat " >
+                    <uc4:bottom ID="Bottom1" runat="server" />
+                </td>                
+            </tr>
+        </table>
+    </td>
+    </tr>
+    </table>
+    </form>
+</body>
+</html>
